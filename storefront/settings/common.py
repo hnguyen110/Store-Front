@@ -4,7 +4,6 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,7 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'storefront.wsgi.application'
 
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -123,32 +121,6 @@ DJOSER = {
     }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 2525
-DEFAULT_FROM_EMAIL = 'no-reply@storefront.com'
-
-CELERY_BROKER_URL = 'redis://localhost:6379/1'
-CELERY_BEAT_SCHEDULE = {
-    'notify_customer': {
-        'task': 'playground.tasks.notify_customer',
-        'schedule': 10,
-        'args': ['Hello World']
-    }
-}
-
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://localhost:6379/2",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
-    }
-}
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -175,3 +147,4 @@ LOGGING = {
         }
     }
 }
+
