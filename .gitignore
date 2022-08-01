@@ -1,0 +1,6 @@
+static
+media
+.pytest_cache
+celerybeat-schedule
+general.log
+*.pyc
